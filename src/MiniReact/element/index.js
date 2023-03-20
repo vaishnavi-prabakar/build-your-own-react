@@ -10,6 +10,10 @@ export function createElement(type, configObject, ...args) {
     configObject,
     args,
   });
-  // TODO: to be implemented
-  return {};
+  const children = args.length > 0 ? [...args] :[];
+  const props = {
+    ...configObject,
+    children: children
+  }
+  return {type: type, props: props};
 }
